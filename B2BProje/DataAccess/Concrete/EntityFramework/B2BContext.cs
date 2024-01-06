@@ -40,19 +40,20 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
             public DbSet<Adres> Adresler_Tablosu { get; set; }
 
             // Model oluşturulurken özel konfigürasyonları yapmak için kullanılır
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
-            {
-                modelBuilder.Entity<Bayi>()
-                    .HasOne(b => b.BayiAdres)
-                    .WithMany(a => a.Bayiler)
-                    .HasForeignKey(b => b.AdresID);
+            //protected override void OnModelCreating(ModelBuilder modelBuilder)
+            //{
+            //    modelBuilder.Entity<Bayi>()
+            //        .HasOne(b => b.Adres)  // "Bayi" sınıfının "Adres" özelliğine referans
+            //        .WithMany(a => a.Bayiler)  // "Adres" sınıfının "Bayiler" özelliğine referans
+            //        .HasForeignKey(b => b.AdresID);
 
-                // Diğer konfigürasyonlar...
+            //    // Diğer konfigürasyonlar...
 
-                base.OnModelCreating(modelBuilder);
-            }
+            //    base.OnModelCreating(modelBuilder);
+            //}
 
-          
+
+
 
 
             // Veritabanı bağlantı dizesini belirlemek için kullanılır

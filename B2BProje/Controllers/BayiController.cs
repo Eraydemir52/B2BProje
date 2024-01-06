@@ -1,6 +1,8 @@
 ﻿using B2BProje.Business.Abstract;
+using B2BProje.DataAccess.Concrete.EntityFramework.B2BProje.DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,5 +39,23 @@ namespace B2BProje.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+        [HttpGet("withAdres")]
+        public IActionResult GetAllWithAdres()
+        {
+            try
+            {
+                // Bayi listesini Business katmanından al, bu sefer GetAllWithAdres metodunu kullan
+                var bayilerWithAdres = _bayiService.GetAllWithAdres();
+
+                // Dönen veriyi kullanarak HTTP 200 OK durumunu döndür
+                return Ok(bayilerWithAdres);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 Internal Server Error döndür
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
     }
 }

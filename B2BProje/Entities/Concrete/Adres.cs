@@ -11,7 +11,7 @@ namespace B2BProje.Entities.Concrete
     [Table("Adresler_Tablosu")]
     public class Adres : IEntity
     {
-       
+
         [Key]
         [Column("adresID")]
         public int AdresID { get; set; }

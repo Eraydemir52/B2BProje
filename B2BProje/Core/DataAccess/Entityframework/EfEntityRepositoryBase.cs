@@ -1,23 +1,24 @@
-﻿using B2BProje.Core.Entities;
+﻿using B2BProje.Core.DataAccess.Entityframework;
+using B2BProje.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace B2BProje.Core.DataAccess.Entityframework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()
-
     {
+        protected readonly TContext _context;
+
+
         public EfEntityRepositoryBase(TContext context)
         {
-            // constructor içinde gerekli işlemler yapılabilir
+            _context = context;
         }
-
 
         public void Add(TEntity entity)
         {
@@ -36,11 +37,8 @@ namespace B2BProje.Core.DataAccess.Entityframework
 
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
-            using (TContext context = new TContext())
-            {
-                return filter == null ? context.Set<TEntity>().ToList()
-                    : context.Set<TEntity>().Where(filter).ToList();
-            }
+            return filter == null ? _context.Set<TEntity>().ToList()
+                : _context.Set<TEntity>().Where(filter).ToList();
         }
 
         public void Update(TEntity entity)

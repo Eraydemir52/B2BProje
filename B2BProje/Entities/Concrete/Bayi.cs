@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace B2BProje.Entities.Concrete
 {
-    [Table("Bayiler_Tablosu")]
+    [Table("bayiler_tablosu")]
     public class Bayi : IEntity
     {
         [Key]
@@ -46,11 +46,11 @@ namespace B2BProje.Entities.Concrete
         [Column("bayilogo")]
         public string Bayilogo { get; set; }
 
-        // Bayi ile Adres arasındaki ilişkiyi ifade eden özellik
-        [ForeignKey("Adres")]
+        [ForeignKey("BayiAdres")]
         public int AdresID { get; set; }
-       
+
         public Adres BayiAdres { get; set; }
+
 
 
 
