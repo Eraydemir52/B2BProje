@@ -38,14 +38,20 @@ namespace B2BProje
             services.AddScoped<IBankaService, BankaManager>();
             services.AddScoped<IMesajDal, EfMesajDal>();
             services.AddScoped<IMesajService, MesajManager>();
+            services.AddScoped<IBayiDal, EfBayiDal>();
+            services.AddScoped<IBayiService, BayiManager>();
+            services.AddScoped<IAdresService, AdresManager>();
+            services.AddScoped<IAdresDal, EfAdresDal>();
+
+
 
             // Diðer servis eklemeleri...
             services.AddRazorPages();
 
             // API Controller'larýný etkinleþtir
             services.AddControllers();
-
         }
+
 
 
 
