@@ -11,6 +11,8 @@ namespace B2BProje.Entities.DTOs
     {
         public int BayiID { get; set; }
         public string BayiKodu { get; set; }
+   
+        public string BayiAdi { get; set; }
         // ... Diğer bayi özellikleri
         public int AdresID { get; set; }
         public string BayiAdres { get; set; }

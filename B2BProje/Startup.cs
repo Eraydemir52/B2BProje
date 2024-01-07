@@ -42,7 +42,9 @@ namespace B2BProje
             services.AddScoped<IBayiService, BayiManager>();
             services.AddScoped<IAdresService, AdresManager>();
             services.AddScoped<IAdresDal, EfAdresDal>();
-
+            services.AddScoped<IAyarService, AyarManager>();
+            services.AddScoped<IAyarDal, EfAyarDal>()
+;
 
 
             // Diðer servis eklemeleri...

@@ -28,11 +28,12 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
                     {
                         BayiID = bayi.BayiID,
                         BayiKodu = bayi.BayiKodu,
-                    //... (Diğer bayi özelliklerini ekleyin)
-                    AdresID = adres.AdresID,
+                        BayiAdi =bayi.BayiAdi,
+                        //... (Diğer bayi özelliklerini ekleyin)
+                        AdresID = adres.AdresID,
                         BayiAdres = adres.BayiAdres,
-                    //... (Diğer adres özelliklerini ekleyin)
-                })
+                        //... (Diğer adres özelliklerini ekleyin)
+                    })
                 .ToList();
 
             return result;

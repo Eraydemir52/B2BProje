@@ -38,6 +38,7 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
             public DbSet<Mesaj> Mesaj_Tablosu { get; set; }
             public DbSet<Bayi> Bayiler_Tablosu { get; set; }
             public DbSet<Adres> Adresler_Tablosu { get; set; }
+            public DbSet<Ayar> X_Ayarlar_Tablosu { get; set; }
 
             // Model oluşturulurken özel konfigürasyonları yapmak için kullanılır
             //protected override void OnModelCreating(ModelBuilder modelBuilder)
