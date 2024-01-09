@@ -26,7 +26,7 @@ namespace B2BProje
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // This method gets called by the runtime. Use this method to add services to the contain er.
         public void ConfigureServices(IServiceCollection services)
         {
             // DbContextOptions'ý doðru bir þekilde ayarla
@@ -43,8 +43,25 @@ namespace B2BProje
             services.AddScoped<IAdresService, AdresManager>();
             services.AddScoped<IAdresDal, EfAdresDal>();
             services.AddScoped<IAyarService, AyarManager>();
-            services.AddScoped<IAyarDal, EfAyarDal>()
-;
+            services.AddScoped<IAyarDal, EfAyarDal>();
+            services.AddScoped<ISiparisService, SiparisManager>();
+            services.AddScoped<ISiparisDal, EfSiparisDal>();
+            services.AddScoped<ISiparisVerilenUrunService, SiparisVerilenUrunManager>();
+            services.AddScoped<ISiparisVerilenDal, EfSiparisVerilenUrunDal>();
+            services.AddScoped<IUrunDal, EfUrunDal>();
+            services.AddScoped<IUrunService, UrunManager>();
+            services.AddScoped<IUreticiDal, EfUreticiDal>();
+            services.AddScoped<IUreticiService, UreticiManager>();
+            services.AddScoped<IKategoriDal, EfKategoriDal>();
+            services.AddScoped<IKategoriService, KategoriManager>();
+            services.AddScoped<IResimDal, EfResimDal>();
+            services.AddScoped<IResimService, ResimManager>();
+            services.AddScoped<ISiparisDurumDal, EfSiparisDurumDal>();
+            services.AddScoped<ISiparisDurumService, SiparisDurumManager>();
+            services.AddScoped<ISepetDal, EfSepetDal>();
+            services.AddScoped<ISepetService, SepetManager>();
+            services.AddScoped<IHavaleDal, EfHavaleDal>();
+            services.AddScoped<IHavaleService, HavaleManager>();
 
 
             // Diðer servis eklemeleri...

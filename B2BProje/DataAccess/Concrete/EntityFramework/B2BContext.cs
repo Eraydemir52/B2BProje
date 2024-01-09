@@ -39,6 +39,15 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
             public DbSet<Bayi> Bayiler_Tablosu { get; set; }
             public DbSet<Adres> Adresler_Tablosu { get; set; }
             public DbSet<Ayar> X_Ayarlar_Tablosu { get; set; }
+            public DbSet<Siparis> Siparisler_Tablosu { get; set; }
+            public DbSet<SiparisUrun> Siparis_Verilen_Urunler_Tablosu { get; set; }
+            public DbSet<Urun> Urun_Tablosu { get; set; }
+            public DbSet<Uretici> Ureticiler_Tablosu { get; set; }
+            public DbSet<Kategori> Kategoriler_Tablosu { get; set; }
+            public DbSet<Resim> Resimler_Tablosu { get; set; }
+            public DbSet<SiparisDurum> Siparis_Durumları_Tablosu { get; set; }
+            public DbSet<Sepet> Sepet_Tablosu { get; set; }
+            public DbSet<Havale> Havale_Bildirim_Tablosu { get; set; }
 
             // Model oluşturulurken özel konfigürasyonları yapmak için kullanılır
             //protected override void OnModelCreating(ModelBuilder modelBuilder)

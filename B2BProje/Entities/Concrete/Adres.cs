@@ -32,7 +32,7 @@ namespace B2BProje.Entities.Concrete
         [Column("adres_tarih")]
         public DateTime AdresTarih { get; set; }
 
-        public List<Bayi> Bayiler { get; set; }
+       // public List<Bayi> Bayiler { get; set; }
 
 
     }

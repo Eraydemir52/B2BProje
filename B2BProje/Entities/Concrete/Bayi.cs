@@ -32,7 +32,7 @@ namespace B2BProje.Entities.Concrete
         public DateTime BayiTarih { get; set; }
 
         [Column("bayiiskonto")]
-        public int BayiIskonto { get; set; }
+        public Double BayiIskonto { get; set; }
 
         [Column("bayitelefon")]
         public string BayiTelefon { get; set; }
@@ -49,7 +49,7 @@ namespace B2BProje.Entities.Concrete
         [ForeignKey("BayiAdres")]
         public int AdresID { get; set; }
 
-        public Adres BayiAdres { get; set; }
+       // public Adres BayiAdres { get; set; }
 
 
 

@@ -25,7 +25,7 @@ namespace B2BProje.Entities.Concrete
         public string SiteLogo { get; set; }
 
         [Column("site_kdv")]
-        public int site_kdv { get; set; }
+        public Double site_kdv { get; set; }
 
         
     }
