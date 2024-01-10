@@ -32,11 +32,10 @@ namespace B2BProje.Entities.Concrete
 
         [Column("sipariskodu")]
         public string SiparisKodu { get; set; }
-
+       
         [Column("siparisverilenurunlerID")]
-        public int SiparisVerilenuUrunlerID { get; set; }
-
-        public SiparisUrun SiparisUrun { get; set; }
+        public int SiparisVerilenUrunlerID { get; set; }
+        //public SiparisUrun SiparisUrun { get; set; }
 
 
     }

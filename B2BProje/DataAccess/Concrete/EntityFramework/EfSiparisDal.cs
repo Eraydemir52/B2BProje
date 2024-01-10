@@ -21,7 +21,7 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
             var result = _context.Siparisler_Tablosu
                 .Join(
                     _context.Siparis_Verilen_Urunler_Tablosu,
-                    siparis => siparis.SiparisVerilenuUrunlerID,
+                    siparis => siparis.SiparisVerilenUrunlerID,
                     sipasurun => sipasurun.SiparisVerilenUrunlerID,
                     (siparis, sipasurun) => new SiparisDto
                     {

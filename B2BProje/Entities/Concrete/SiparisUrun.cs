@@ -35,7 +35,6 @@ namespace B2BProje.Entities.Concrete
             public string UrunAdi { get; set; }
 
 
-            public List<Siparis> Siparis { get; set; }
 
     }
     
