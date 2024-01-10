@@ -1,6 +1,7 @@
 ﻿using B2BProje.Business.Abstract;
 using B2BProje.DataAccess.Abstract;
 using B2BProje.Entities.Concrete;
+using B2BProje.Entities.DTOs.B2BProje.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace B2BProje.Business.Concrete
         public List<Urun> GetAll()
         {
             return new List<Urun>(_urunDal.GetAll());
+        }
+
+        public List<UrunDto> GetUrunWithDetails()
+        {
+            return _urunDal.GetUrunWithDetails();
         }
     }
 }

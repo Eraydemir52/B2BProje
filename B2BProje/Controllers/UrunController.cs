@@ -35,5 +35,23 @@ namespace B2BProje.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
+        [HttpGet("witurun")]
+        public IActionResult GetwiturunAll()
+        {
+            try
+            {
+                // Banka listesini Business katmanından al
+                var urunler = _urunService.GetUrunWithDetails();
+
+                // Dönen veriyi kullanarak HTTP 200 OK durumunu döndür
+                return Ok(urunler);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 Internal Server Error döndür
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
     }
 }

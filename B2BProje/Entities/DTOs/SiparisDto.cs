@@ -10,6 +10,9 @@ namespace B2BProje.Entities.DTOs
         public int SiparisID { get; set; }
         public string SiparisBayi { get; set; }
         public DateTime SiparisTarih { get; set; }
+        public string SiparisDurum { get; set; }
+        public string SiparisNot { get; set; }
+
 
         // ***************/
 

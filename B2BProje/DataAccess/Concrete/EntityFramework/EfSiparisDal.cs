@@ -28,6 +28,8 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
                         SiparisID = siparis.SiparisID,
                         SiparisBayi = siparis.SiparisBayi,
                         SiparisTarih = siparis.SiparisTarih,
+                        SiparisDurum = siparis.SiparisDurum,
+                        SiparisNot = siparis.SiparisNot,
                         //... (Diğer bayi özelliklerini ekleyin)
                         SiparisVerilenUrunlerID = sipasurun.SiparisVerilenUrunlerID,
                         SiparisVerilenKodu = sipasurun.SiparisVerilenKodu,
