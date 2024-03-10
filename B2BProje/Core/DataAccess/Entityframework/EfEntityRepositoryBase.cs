@@ -22,7 +22,9 @@ namespace B2BProje.Core.DataAccess.Entityframework
 
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            var addedEntity = _context.Entry(entity);
+            addedEntity.State = EntityState.Added;
+            _context.SaveChanges();
         }
 
         public void Delete(TEntity entity)

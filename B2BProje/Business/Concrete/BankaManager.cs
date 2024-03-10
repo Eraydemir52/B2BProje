@@ -18,6 +18,11 @@ namespace B2BProje.Business.Concrete
             _bankaDal = bankaDal;
         }
 
+        public void Add(Banka banka)
+        {
+            _bankaDal.Add(banka);
+        }
+
         public List<Banka> GetAll()
         {
             return new List<Banka>(_bankaDal.GetAll());

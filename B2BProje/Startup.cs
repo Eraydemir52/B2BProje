@@ -33,6 +33,17 @@ namespace B2BProje
             services.AddDbContext<B2BContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
             // IBankaService ve BankaManager'ý ekleyin (baðýmlýlýklarýnýza göre ayarlayýn)
             services.AddScoped<IBankaDal, EfBankaDal>();
             services.AddScoped<IBankaService, BankaManager>();
@@ -88,7 +99,7 @@ namespace B2BProje
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseCors("AllowAll");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

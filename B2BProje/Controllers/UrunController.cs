@@ -1,4 +1,5 @@
 ﻿using B2BProje.Business.Abstract;
+using B2BProje.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,7 +24,7 @@ namespace B2BProje.Controllers
         {
             try
             {
-                // Banka listesini Business katmanından al
+                // Banka listesini Business katmanından burda alır
                 var urun = _urunService.GetAll();
 
                 // Dönen veriyi kullanarak HTTP 200 OK durumunu döndür
@@ -53,5 +54,25 @@ namespace B2BProje.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
+        [HttpPost("AddUrun")]
+        public IActionResult AddUrun([FromBody] Urun urun)
+        {
+            try
+            {
+                // Gerekirse iş mantığı ekleyebilirsiniz
+                _urunService.Add(urun);
+
+                // Başarılı durumda HTTP 201 Created durumunu döndür
+                return StatusCode(201, "Ürün başarıyla eklendi.");
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 Internal Server Error döndür
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+
     }
 }

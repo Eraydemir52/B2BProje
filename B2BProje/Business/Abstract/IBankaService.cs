@@ -9,5 +9,6 @@ namespace B2BProje.Business.Abstract
     public interface IBankaService
     {
         List<Banka> GetAll();
+        void Add(Banka banka);
     }
 }

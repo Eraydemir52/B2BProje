@@ -17,6 +17,7 @@ namespace B2BProje.Business.Concrete
             _urunDal = urunDal;
         }
 
+
         public List<Urun> GetAll()
         {
             return new List<Urun>(_urunDal.GetAll());
@@ -25,6 +26,11 @@ namespace B2BProje.Business.Concrete
         public List<UrunDto> GetUrunWithDetails()
         {
             return _urunDal.GetUrunWithDetails();
+        }
+        public void Add(Urun urun)
+        {
+            // Gerekli iş mantığını burada uygula
+            _urunDal.Add(urun);
         }
     }
 }

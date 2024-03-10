@@ -1,4 +1,5 @@
 ﻿using B2BProje.Business.Abstract;
+using B2BProje.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,6 +39,24 @@ namespace B2BProje
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+        [HttpPost("AddBanka")]
+        public IActionResult AddBanka([FromBody] Banka banka)
+        {
+            try
+            {
+                // BankaService'teki ekleme metodunu çağır
+                _bankaService.Add(banka);
+
+                // Başarılı durumda HTTP 201 Created durumunu döndür
+                return StatusCode(201, "Banka başarıyla eklendi.");
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 Internal Server Error döndür
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
     }
 
 }
