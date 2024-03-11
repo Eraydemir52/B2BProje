@@ -48,6 +48,7 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
             public DbSet<SiparisDurum> Siparis_Durumları_Tablosu { get; set; }
             public DbSet<Sepet> Sepet_Tablosu { get; set; }
             public DbSet<Havale> Havale_Bildirim_Tablosu { get; set; }
+            public DbSet<User> Users { get; set; }
 
             // Model oluşturulurken özel konfigürasyonları yapmak için kullanılır
             //protected override void OnModelCreating(ModelBuilder modelBuilder)

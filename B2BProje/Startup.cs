@@ -1,5 +1,6 @@
 using B2BProje.Business.Abstract;
 using B2BProje.Business.Concrete;
+using B2BProje.Core.JwtService;
 using B2BProje.DataAccess.Abstract;
 using B2BProje.DataAccess.Concrete.EntityFramework;
 using B2BProje.DataAccess.Concrete.EntityFramework.B2BProje.DataAccess.Concrete.EntityFramework;
@@ -73,8 +74,12 @@ namespace B2BProje
             services.AddScoped<ISepetService, SepetManager>();
             services.AddScoped<IHavaleDal, EfHavaleDal>();
             services.AddScoped<IHavaleService, HavaleManager>();
+            services.AddScoped<IUserDal, EfUserDal>();
+            services.AddScoped<IUserService, UserManager>();
+            services.AddScoped<IJwtSettingsService, JwtSettingsManager>();
 
 
+            services.AddSingleton<IConfiguration>(Configuration);// IConfiguration nesnesini enjekte edin
             // Diðer servis eklemeleri...
             services.AddRazorPages();
 

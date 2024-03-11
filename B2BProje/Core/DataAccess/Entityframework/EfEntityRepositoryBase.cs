@@ -34,8 +34,22 @@ namespace B2BProje.Core.DataAccess.Entityframework
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // Örnek olarak, Entity Framework kullanılıyorsa:
+                return _context.Set<TEntity>().FirstOrDefault(filter);
+
+                // veya Dapper kullanılıyorsa:
+                // return _connection.QueryFirstOrDefault<TEntity>("SELECT * FROM YourTable WHERE YourCondition", parameters);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunu loglama veya uygun bir şekilde işleme ekleme
+                Console.WriteLine($"Get method error: {ex.Message}");
+                throw; // Hatanın tekrar fırlatılması
+            }
         }
+
 
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {

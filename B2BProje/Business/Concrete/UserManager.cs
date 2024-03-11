@@ -1,0 +1,49 @@
+﻿using B2BProje.Business.Abstract;
+using B2BProje.DataAccess.Abstract;
+using B2BProje.Entities.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace B2BProje.Business.Concrete
+{
+    public class UserManager : IUserService
+    {
+        private readonly IUserDal _userDal;
+
+        public UserManager(IUserDal userDal)
+        {
+            _userDal = userDal;
+        }
+
+        public void RegisterUser(User user)
+        {
+            // İş mantığı kodları buraya eklenebilir (örneğin şifre hashleme ve diğer validasyon işlemleri).
+
+            _userDal.Add(user);
+        }
+
+        public User Login(string username, string password)
+        {
+            try
+            {
+                // İş mantığı kodları buraya eklenebilir (örneğin şifre karşılaştırma ve kullanıcı doğrulama işlemleri).
+
+                return _userDal.Get(u => u.Username == username && u.Password == password);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunu loglama veya uygun bir şekilde işleme ekleme
+                Console.WriteLine($"Login method error: {ex.Message}");
+                throw; // Hatanın tekrar fırlatılması
+            }
+        }
+
+
+        public List<User> GetAllUsers()
+        {
+            return new List<User>(_userDal.GetAll());
+        }
+    }
+}
