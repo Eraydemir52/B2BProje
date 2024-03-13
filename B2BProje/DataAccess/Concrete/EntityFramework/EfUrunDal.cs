@@ -18,7 +18,7 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
         }
 
         public List<UrunDto> GetUrunWithDetails()
-        {
+        { 
             var result = _context.Urun_Tablosu
                 .Join(
                     _context.Ureticiler_Tablosu,
