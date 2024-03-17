@@ -92,6 +92,39 @@ namespace B2BProje.Controllers
                 return BadRequest(new { Message = "Login failed", Error = ex.Message });
             }
         }
+        [HttpPost("AddUser")]
+        public IActionResult AddUser([FromBody] User user)
+        {
+            try
+            {
+                // Gerekirse iş mantığı ekleyebilirsiniz
+                _userService.Add(user);
+
+                // Başarılı durumda HTTP 201 Created durumunu döndür
+                return StatusCode(201, "Ürün başarıyla eklendi.");
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 Internal Server Error döndür
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpPost("update")]
+        public IActionResult UpdateUser(User user)
+        {
+            try
+            {
+                _userService.Update(user);
+                return Ok("Kullanıcı başarıyla güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Güncelleme işlemi sırasında bir hata oluştu: {ex.Message}");
+            }
+        }
+
+
 
     }
 }

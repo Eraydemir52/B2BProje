@@ -9,5 +9,6 @@ namespace B2BProje.DataAccess.Abstract
 {
     public interface IUserDal : IEntityRepository<User>
     {
+       
     }
 }

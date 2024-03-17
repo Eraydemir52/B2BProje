@@ -45,5 +45,37 @@ namespace B2BProje.Business.Concrete
         {
             return new List<User>(_userDal.GetAll());
         }
+
+        public void Add(User user)
+        {
+            _userDal.Add(user);
+        }
+
+        public void Update(User user)
+        {
+            try
+            {
+                var existingUser = _userDal.Get(u => u.Username == user.Username);
+
+                if (existingUser == null)
+                {
+                    throw new Exception("Kullanıcı bulunamadı.");
+                }
+
+                // Güncelleme işlemleri
+               
+               
+                existingUser.Password = user.Password;
+               
+
+                _userDal.Update(existingUser);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Update method error: {ex.Message}");
+                throw; // Hatanın tekrar fırlatılması
+            }
+        }
+
     }
 }

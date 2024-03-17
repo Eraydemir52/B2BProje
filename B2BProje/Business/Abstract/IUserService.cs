@@ -12,5 +12,9 @@ namespace B2BProje.Business.Abstract
         User Login(string username, string password);
         // Diğer metotlar buraya eklenir.
         List<User> GetAllUsers();
+        void Add(User user);
+        void Update(User user);
+
+
     }
 }

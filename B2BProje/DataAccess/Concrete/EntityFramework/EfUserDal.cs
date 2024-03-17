@@ -14,5 +14,8 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
         public EfUserDal(B2BContext context) : base(context)
         {
         }
+
+       
+
     }
 }

@@ -59,7 +59,10 @@ namespace B2BProje.Core.DataAccess.Entityframework
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            var updatedEntity = _context.Entry(entity);
+            updatedEntity.State = EntityState.Modified;
+            _context.SaveChanges();
         }
+
     }
 }
