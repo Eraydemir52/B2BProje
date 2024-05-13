@@ -1,4 +1,5 @@
 ﻿using B2BProje.Entities.Concrete;
+using B2BProje.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace B2BProje.Business.Abstract
         List<User> GetAllUsers();
         void Add(User user);
         void Update(User user);
+        User Get(string username);
+        List<UserDto> GetUserDtos();
+
 
 
     }

@@ -14,6 +14,7 @@ namespace B2BProje.Core.DataAccess.Entityframework
         void Delete(T entity);
         T Get(Expression<Func<T, bool>> filter);
         List<T> GetAll(Expression<Func<T, bool>> filter = null);
+        void DeleteID(int id);
     }
 
 }

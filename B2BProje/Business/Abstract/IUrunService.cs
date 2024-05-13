@@ -12,5 +12,8 @@ namespace B2BProje.Business.Abstract
         List<Urun> GetAll();
         List<UrunDto> GetUrunWithDetails();
         void Add(Urun urun);
+        void DeleteID(int urunID);
+        void Update(Urun urun);
+        
     }
 }

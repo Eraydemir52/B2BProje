@@ -49,6 +49,7 @@ namespace B2BProje.DataAccess.Concrete.EntityFramework
             public DbSet<Sepet> Sepet_Tablosu { get; set; }
             public DbSet<Havale> Havale_Bildirim_Tablosu { get; set; }
             public DbSet<User> Users { get; set; }
+            public DbSet<Role> Role { get; set; }
 
             // Model oluşturulurken özel konfigürasyonları yapmak için kullanılır
             //protected override void OnModelCreating(ModelBuilder modelBuilder)

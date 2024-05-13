@@ -32,5 +32,16 @@ namespace B2BProje.Business.Concrete
             // Gerekli iş mantığını burada uygula
             _urunDal.Add(urun);
         }
+
+        public void DeleteID(int urunID)
+        {
+            _urunDal.DeleteID(urunID);
+        }
+
+        public void Update(Urun urun)
+        {
+            _urunDal.Update(urun);
+        }
+
     }
 }

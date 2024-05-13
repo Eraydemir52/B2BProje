@@ -123,6 +123,44 @@ namespace B2BProje.Controllers
                 return StatusCode(500, $"Güncelleme işlemi sırasında bir hata oluştu: {ex.Message}");
             }
         }
+        [HttpGet("{username}")]
+        public IActionResult GetUser(string username)
+        {
+            try
+            {
+                var user = _userService.Get(username);
+
+                if (user == null)
+                {
+                    return NotFound(new { Message = "User not found" });
+                }
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("userDto")]
+        public IActionResult GetwiturunAll()
+        {
+            try
+            {
+                // Banka listesini Business katmanından al
+                var userRoles = _userService.GetUserDtos();
+
+                // Dönen veriyi kullanarak HTTP 200 OK durumunu döndür
+                return Ok(userRoles);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 Internal Server Error döndür
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
 
 
 

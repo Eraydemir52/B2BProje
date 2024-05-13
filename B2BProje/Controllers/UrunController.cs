@@ -72,6 +72,37 @@ namespace B2BProje.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+        [HttpDelete("DeleteUrun/{urunID}")]
+        public IActionResult Delete(int urunID)
+        {
+            try
+            {
+                _urunService.DeleteID(urunID);
+                return Ok("Urun başarıyla silindi.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"İç Sunucu Hatası: {ex.Message}");
+            }
+        }
+
+        [HttpPost("UpdateUrun")]
+        public IActionResult Update([FromBody] Urun urun)
+        {
+            try
+            {
+                // Gerekirse iş mantığı ekleyebilirsiniz**Eray
+                _urunService.Update(urun);
+
+                // Başarılı durumda HTTP 200 OK durumunu döndür
+                return Ok("Urun başarıyla güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 Internal Server Error döndür
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
 
 
     }

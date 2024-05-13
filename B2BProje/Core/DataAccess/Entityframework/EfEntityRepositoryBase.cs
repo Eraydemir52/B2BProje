@@ -32,6 +32,21 @@ namespace B2BProje.Core.DataAccess.Entityframework
             throw new NotImplementedException();
         }
 
+        public void DeleteID(int id)
+        {
+            var entityToDelete = _context.Set<TEntity>().Find(id);
+            if (entityToDelete != null)
+            {
+                _context.Set<TEntity>().Remove(entityToDelete);
+                _context.SaveChanges();
+            }
+        }
+
+
+
+
+
+
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             try

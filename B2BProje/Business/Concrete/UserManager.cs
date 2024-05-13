@@ -1,6 +1,7 @@
 ﻿using B2BProje.Business.Abstract;
 using B2BProje.DataAccess.Abstract;
 using B2BProje.Entities.Concrete;
+using B2BProje.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,5 +78,22 @@ namespace B2BProje.Business.Concrete
             }
         }
 
+        public User Get(string username)
+        {
+            try
+            {
+                return _userDal.Get(u => u.Username == username);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Get method error: {ex.Message}");
+                throw; // Hatanın tekrar fırlatılması
+            }
+        }
+
+        public List<UserDto> GetUserDtos()
+        {
+            return _userDal.GetUserDtos();
+        }
     }
 }

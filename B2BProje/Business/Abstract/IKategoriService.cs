@@ -9,5 +9,9 @@ namespace B2BProje.Business.Abstract
     public interface IKategoriService
     {
         List<Kategori> GetAll();
+        void Add(Kategori kategori);
+        void Update(Kategori kategori);
+        void DeleteID(int kategoriID);
+        
     }
 }

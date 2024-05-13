@@ -20,5 +20,15 @@ namespace B2BProje.Entities.Concrete
 
         [Column("password")]
         public string Password { get; set; }
+
+        [Column("phonenumber")]
+        public string phonenumber { get; set; }
+        [Column("address")]
+        public string address { get; set; }
+
+        [Column("roleID")]
+        public int roleID { get; set; }
+
+       
     }
 }
